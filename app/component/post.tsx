@@ -21,13 +21,13 @@ interface Props {
 
 export function Post(props: Props): JSX.Element {
   return (
-    <div className="mb-10 rounded-[40px] p-8 bg-[#FFFFFF]/45 border border-[#FFFFFF]/50 hover:-translate-y-2 transition-all duration-500 ease-in-out hover:shadow-2xl hover:shadow-[#6366F1]/30">
+    <div className="mb-10 rounded-[40px] p-8 bg-[#FFFFFF]/30 border border-[#FFFFFF]/50 hover:-translate-y-2 transition-all duration-500 ease-in-out hover:shadow-2xl hover:shadow-[#6366F1]/30">
       <div className="py-2 flex justify-between items-center">
         <div className="flex justify-between items-center">
           <img className="rounded-full w-15 mr-2" src={props.avatar} />
           <div className="flex flex-col p-2">
             <div className="font-bold">{props.authorUsername}</div>
-            <div className="text-[#6366F1]/75 text-xs font-bold">
+            <div className="text-[#6366F1]/75 text-xs font-bold uppercase">
               @{props.username}
             </div>
           </div>
@@ -37,7 +37,7 @@ export function Post(props: Props): JSX.Element {
         </div>
       </div>
       <div
-        className="[&_p]:mb-3 [&_a]:text-[#6366F1]/75 [&_a:hover]:underline"
+        className="wrap-break-word [&_p]:mb-3 [&_a]:text-[#6366F1]/75 [&_a:hover]:underline"
         dangerouslySetInnerHTML={{ __html: props.content }}
       ></div>
       <MediaCarousel attachments={props.media_attachments} />

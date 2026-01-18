@@ -8,16 +8,16 @@ interface Props {
 }
 
 export function ReblogButton(props: Props) {
-  const [liked, setLiked] = useState<boolean>(false);
+  const [reblog, setReblog] = useState<boolean>(false);
   const [count, setCount] = useState<number>(props.reblogs_count);
 
   function toggleLike() {
-    setLiked((previous) => {
+    setReblog((previous) => {
       return !previous;
     });
 
     setCount((previous_count) => {
-      if (liked) {
+      if (reblog) {
         return previous_count - 1;
       } else {
         return previous_count + 1;
@@ -30,20 +30,28 @@ export function ReblogButton(props: Props) {
       type="button"
       title="Reblog"
       onClick={toggleLike}
-      className="inline-flex items-center gap-2 text-base"
+      className="group inline-flex items-center gap-2 text-base cursor-pointer"
     >
       <span
         className={
-          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 hover:scale-110 transition-transform duration-150 active:scale-90"
+          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 group-hover:scale-110 transition-transform duration-150 active:scale-90 group-hover:bg-indigo-100"
         }
       >
-        {liked ? (
-          <FontAwesomeIcon className="text-purple-500" icon={faRetweet} />
+        {reblog ? (
+          <FontAwesomeIcon
+            className="text-indigo-600 group-hover:text-indigo-600"
+            icon={faRetweet}
+          />
         ) : (
-          <FontAwesomeIcon className="text-[#94A3B8]" icon={faRetweet} />
+          <FontAwesomeIcon
+            className="text-[#94A3B8] group-hover:text-indigo-600"
+            icon={faRetweet}
+          />
         )}
       </span>
-      <span className="text-[#94A3B8]">{count}</span>
+      <span className="text-[#94A3B8] group-hover:text-indigo-600">
+        {count}
+      </span>
     </button>
   );
 }

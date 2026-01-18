@@ -30,20 +30,28 @@ export function LikeButton(props: Props) {
       type="button"
       title="Like"
       onClick={toggleLike}
-      className="inline-flex items-center gap-2 text-base"
+      className="group inline-flex items-center gap-2 text-base cursor-pointer"
     >
       <span
         className={
-          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 hover:scale-110 transition-transform duration-150 active:scale-90"
+          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 group-hover:scale-110 transition-transform duration-150 active:scale-90 group-hover:bg-indigo-100"
         }
       >
         {liked ? (
-          <FontAwesomeIcon className="text-purple-500" icon={solidHeartIcon} />
+          <FontAwesomeIcon
+            className="text-indigo-500 group-hover:text-indigo-600"
+            icon={solidHeartIcon}
+          />
         ) : (
-          <FontAwesomeIcon className="text-[#94A3B8]" icon={regularHeartIcon} />
+          <FontAwesomeIcon
+            className="text-[#94A3B8] group-hover:text-indigo-600"
+            icon={regularHeartIcon}
+          />
         )}
       </span>
-      <span className="text-[#94A3B8]">{count}</span>
+      <span className="text-[#94A3B8] group-hover:text-indigo-600">
+        {count}
+      </span>
     </button>
   );
 }

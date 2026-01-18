@@ -17,21 +17,21 @@ export function BookmarkButton() {
     <button
       title="Bookmark"
       onClick={toggleBookmarked}
-      className="inline-flex items-center gap-2 text-base"
+      className="group inline-flex items-center gap-2 text-base cursor-pointer"
     >
       <span
         className={
-          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 hover:scale-110 transition-transform duration-150 active:scale-90"
+          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 hover:scale-110 transition-transform duration-150 active:scale-90 group-hover:bg-indigo-100"
         }
       >
         {bookmarked ? (
           <FontAwesomeIcon
-            className="text-purple-500"
+            className="text-indigo-600 group-hover:text-indigo-600"
             icon={solidBookmarkIcon}
           />
         ) : (
           <FontAwesomeIcon
-            className="text-[#94A3B8]"
+            className="text-[#94A3B8] group-hover:text-indigo-600"
             icon={regularBookmarkIcon}
           />
         )}

@@ -22,24 +22,29 @@ export function CommentButton(props: Props) {
       type="button"
       title="Comment"
       onClick={toggleComment}
-      className="group inline-flex items-center gap-2"
+      className="group inline-flex items-center gap-2 cursor-pointer"
     >
       <span
         className={[
-          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 text-base leading-none transition-transform duration-150 ease-out",
+          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 text-base leading-none transition-transform duration-150 ease-out  group-hover:bg-indigo-100",
           !comment && "group-hover:scale-110",
         ].join(" ")}
       >
         {comment ? (
-          <FontAwesomeIcon className="text-[#94A3B8]" icon={solidCommentIcon} />
+          <FontAwesomeIcon
+            className="text-[#94A3B8] group-hover:text-indigo-600"
+            icon={solidCommentIcon}
+          />
         ) : (
           <FontAwesomeIcon
-            className="text-[#94A3B8]"
+            className="text-[#94A3B8] group-hover:text-indigo-600"
             icon={regularCommentIcon}
           />
         )}
       </span>
-      <span className="text-[#94A3B8]">{count}</span>
+      <span className="text-[#94A3B8] group-hover:text-indigo-600">
+        {count}
+      </span>
     </button>
   );
 }
