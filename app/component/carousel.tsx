@@ -17,7 +17,7 @@ export function MediaCarousel(props: Props) {
 
   return (
     <div className="relative mt-3 overflow-hidden rounded-2xl aspect-square bg-black">
-      <img src={images[index].url} className=" h-full w-full object-cover" />
+      <img src={images[index].url} className="h-full w-full object-cover" />
 
       {index > 0 && (
         <button

@@ -13,7 +13,7 @@ export function RightSidebar() {
         </h2>
 
         {/* Grey Container */}
-        <div className="relative flex p-1.5 bg-white/30 backdrop-blur-2xl rounded-2xl border border-white/40 shadow-sm">
+        <div className="relative flex p-1.5 bg-slate-100/50 backdrop-blur-2xl rounded-2xl border border-white/40 shadow-sm">
           {/* Sliding Pill*/}
           <div
             className={`absolute top-1.5 bottom-1.5 left-1.5 w-[calc(50%-6px)] bg-white rounded-[20px] shadow-sm transition-transform duration-300 ease-in-out ${
