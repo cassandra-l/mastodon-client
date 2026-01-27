@@ -10,7 +10,6 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { LeftSidebar } from "./component/left-sidebar";
-import { RightSidebar } from "./component/right-sidebar";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -51,8 +50,6 @@ export default function App() {
       <main className="flex-1">
         <Outlet />
       </main>
-
-      <RightSidebar />
     </div>
   );
 }

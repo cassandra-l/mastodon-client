@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getStatuses, type Status } from "~/api/mastodon";
 import { Post } from "~/component/post";
+import { RightSidebar } from "~/component/right-sidebar";
 
 export function TrendingFeed() {
   const [mastodonStatuses, setMastodonStatuses] = useState<Status[]>([]);
@@ -21,26 +22,27 @@ export function TrendingFeed() {
   // because nothing else is a dependency, so nothing else will trigger it.
 
   return (
-    <div className="w-xl mx-auto mt-30">
+    <div className="w-xl mx-auto mt-20">
+      <div className="mb-20">
+        <RightSidebar />
+      </div>
       {mastodonStatuses.map((postData, index) => {
         // The API response (when data is fetch in JSON) turns dates into strings.
         // JavaScript does not automatically turn API dates into Date objects.
         const dateObject = new Date(postData.created_at);
         return (
-          <>
-            <Post
-              key={index}
-              authorUsername={postData.account.display_name}
-              content={postData.content}
-              createdAt={dateObject}
-              media_attachments={postData.media_attachments}
-              avatar={postData.account.avatar}
-              username={postData.account.username}
-              favourites_count={postData.favourites_count}
-              replies_count={postData.replies_count}
-              reblogs_count={postData.reblogs_count}
-            />
-          </>
+          <Post
+            key={index}
+            authorUsername={postData.account.display_name}
+            content={postData.content}
+            createdAt={dateObject}
+            media_attachments={postData.media_attachments}
+            avatar={postData.account.avatar}
+            username={postData.account.username}
+            favourites_count={postData.favourites_count}
+            replies_count={postData.replies_count}
+            reblogs_count={postData.reblogs_count}
+          />
         );
       })}
     </div>
