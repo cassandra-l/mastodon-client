@@ -12,9 +12,9 @@ export function ContentFilter() {
   return (
     <div className="pt-10 flex flex-col gap-10">
       <div>
-        <h2 className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-4">
+        {/* <h2 className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-4">
           Filter Timeline
-        </h2>
+        </h2> */}
 
         {/* Grey Container */}
         <div className="relative flex p-1.5 bg-slate-100/50 backdrop-blur-2xl rounded-full border border-white/40 shadow-sm">
@@ -43,7 +43,7 @@ export function ContentFilter() {
               }
             />
             <span
-              className={`text-[10px] font-bold tracking-widest uppercase ${
+              className={`text-[10px] font-black tracking-widest uppercase ${
                 filter === "Federated"
                   ? "text-indigo-700"
                   : "text-[#94A3B8] group-hover:text-[#475569]"
@@ -66,7 +66,7 @@ export function ContentFilter() {
               }
             />
             <span
-              className={`text-[10px] font-bold tracking-widest uppercase ${
+              className={`text-[10px] font-black tracking-widest uppercase ${
                 filter === "Local"
                   ? "text-indigo-700"
                   : "text-[#94A3B8] group-hover:text-[#475569] transition-colors duration-150"
@@ -89,7 +89,7 @@ export function ContentFilter() {
               }
             />
             <span
-              className={`text-[10px] font-bold tracking-widest uppercase ${
+              className={`text-[10px] font-black tracking-widest uppercase ${
                 filter === "Trending"
                   ? "text-indigo-700"
                   : "text-[#94A3B8] group-hover:text-[#475569] transition-colors duration-150"
@@ -100,7 +100,7 @@ export function ContentFilter() {
           </button>
         </div>
       </div>
-      <div>
+      {/* <div>
         <h2 className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-4">
           Current Server
         </h2>
@@ -119,7 +119,7 @@ export function ContentFilter() {
             <span className="font-bold text-indigo-600"> mastodon.social</span>
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

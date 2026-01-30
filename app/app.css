@@ -1,23 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans:
-    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-brand-purple: #6366f1;
+  --color-glass-white: rgba(255, 255, 255, 0.7);
+  --color-glass-dark: rgba(15, 23, 42, 0.6);
 }
 
 html,
 body {
-  @apply bg-linear-to-br
-         from-[#F8FAFC]
-         to-[#6366F1]/5;
-  /* from-[#E0E7FF]
-         via-[#FDF2F8]
-         to-[#F0F9FF]; */
-
-  /* background: linear-gradient(135deg, #f0f4f8 0%, #f8fafc 100%); */
-
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+  min-height: 100vh;
+  transition: background-color 0.7s ease-in-out;
 }
+
+/* LIGHT MODE SETTINGS */
+html {
+  background:
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent),
+    linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+  color: #0f172a;
+}
+
+/* DARK MODE SETTINGS */
+/* html.dark {
+  background:
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
+    #020617;
+  color: #f8fafc;
+} */
+
+/* GLASSMORPHISM CARD UTILITY */
+/* .glass-card {
+  @apply backdrop-blur-xl border shadow-sm rounded-[32px] transition-all duration-500;
+  background: var(--color-glass-white);
+  border-color: rgba(255, 255, 255, 0.4);
+} */
+
+/* html.dark .glass-card {
+  background: var(--color-glass-dark);
+  border-color: rgba(30, 41, 59, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+} */

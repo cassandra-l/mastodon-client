@@ -7,7 +7,7 @@ interface Props {
 
 export function MediaCarousel(props: Props) {
   const images = props.attachments.filter(
-    (a) => a.type === "image" || a.type === "gifv"
+    (a) => a.type === "image" || a.type === "gifv",
   );
 
   const [index, setIndex] = useState<number>(0);
@@ -17,7 +17,10 @@ export function MediaCarousel(props: Props) {
 
   return (
     <div className="relative mt-3 overflow-hidden rounded-2xl aspect-square bg-black">
-      <img src={images[index].url} className="h-full w-full object-cover" />
+      <img
+        src={images[index].url}
+        className="h-full w-full object-cover ease-in-out hover:scale-105 transition-transform duration-700"
+      />
 
       {index > 0 && (
         <button
