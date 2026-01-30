@@ -2,7 +2,7 @@ import {
   faBell,
   faCog,
   faFire,
-  faHouse,
+  faNewspaper,
   faMagnifyingGlass,
   faEnvelopeOpen,
   faPlus,
@@ -16,14 +16,8 @@ export function LeftSidebar() {
       <h2 className="mb-6 font-bold italic text-2xl">Mastodon Client</h2>
 
       <nav className="flex flex-col gap-4">
-        <SidebarButton label="Home" path="/home" icon={faHouse} />
+        <SidebarButton label="Feed" path="/" icon={faNewspaper} />
         <SidebarButton label="Search" path="/search" icon={faMagnifyingGlass} />
-        <SidebarButton label="Trending" path="/" icon={faFire} />
-        <SidebarButton
-          label="Messages"
-          path="/messages"
-          icon={faEnvelopeOpen}
-        />
         <SidebarButton
           label="Notifications"
           path="/notifications"

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { getStatuses, type Status } from "~/api/mastodon";
 import { Post } from "~/component/post";
-import { RightSidebar } from "~/component/right-sidebar";
+import { ContentFilter } from "~/component/content-filter";
+import { ServerDropdown } from "~/component/server-dropdown";
 
-export function TrendingFeed() {
+export function Feed() {
   const [mastodonStatuses, setMastodonStatuses] = useState<Status[]>([]);
 
   useEffect(() => {
@@ -23,8 +24,14 @@ export function TrendingFeed() {
 
   return (
     <div className="w-xl mx-auto mt-20">
+      <div>
+        <ServerDropdown />
+      </div>
+      <h1 className="mt-5 text-6xl font-black text-slate-900 tracking-tighter">
+        Your Feed
+      </h1>
       <div className="mb-20">
-        <RightSidebar />
+        <ContentFilter />
       </div>
       {mastodonStatuses.map((postData, index) => {
         // The API response (when data is fetch in JSON) turns dates into strings.
