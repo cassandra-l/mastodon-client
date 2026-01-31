@@ -29,11 +29,9 @@ html {
 } */
 
 /* GLASSMORPHISM CARD UTILITY */
-/* .glass-card {
-  @apply backdrop-blur-xl border shadow-sm rounded-[32px] transition-all duration-500;
-  background: var(--color-glass-white);
-  border-color: rgba(255, 255, 255, 0.4);
-} */
+.glass-card {
+  @apply backdrop-blur-xl bg-white/70 border border-white/50 rounded-4xl transition-all duration-500;
+}
 
 /* html.dark .glass-card {
   background: var(--color-glass-dark);

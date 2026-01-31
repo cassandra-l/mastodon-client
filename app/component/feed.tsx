@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getStatuses, type Status } from "~/api/mastodon";
 import { Post } from "~/component/post";
-import { ContentFilter } from "~/component/content-filter";
+import { FeedFilter } from "~/component/feed-filter";
 import { ServerDropdown } from "~/component/server-dropdown";
 
 export function Feed() {
@@ -31,7 +31,7 @@ export function Feed() {
         Your Feed
       </h1>
       <div className="mb-20">
-        <ContentFilter />
+        <FeedFilter />
       </div>
       {mastodonStatuses.map((postData, index) => {
         // The API response (when data is fetch in JSON) turns dates into strings.
