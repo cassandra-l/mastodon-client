@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { getStatuses, type Status } from "~/api/mastodon";
 import { Post } from "~/component/post";
 import { FeedFilter } from "~/component/feed-filter";
-import { ServerDropdown } from "~/component/server-dropdown";
 
 export function Feed() {
   const [mastodonStatuses, setMastodonStatuses] = useState<Status[]>([]);
@@ -24,10 +23,7 @@ export function Feed() {
 
   return (
     <div className="w-xl mx-auto mt-20">
-      <div>
-        <ServerDropdown />
-      </div>
-      <h1 className="mt-5 text-6xl font-black text-slate-900 tracking-tighter">
+      <h1 className="mt-5 text-6xl font-black text-slate-900 dark:text-white tracking-tighter">
         Your Feed
       </h1>
       <div className="mb-20">

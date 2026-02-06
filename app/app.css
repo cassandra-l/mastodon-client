@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-brand-purple: #6366f1;
   --color-glass-white: rgba(255, 255, 255, 0.7);
@@ -14,27 +16,106 @@ body {
 
 /* LIGHT MODE SETTINGS */
 html {
-  background:
-    radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent),
-    linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+  position: relative;
+  background: linear-gradient(to bottom right, #eef2ff, #fdfcfd);
   color: #0f172a;
 }
 
-/* DARK MODE SETTINGS */
-/* html.dark {
-  background:
-    radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
-    #020617;
-  color: #f8fafc;
-} */
-
-/* GLASSMORPHISM CARD UTILITY */
-.glass-card {
-  @apply backdrop-blur-xl bg-white/70 border border-white/50 rounded-4xl transition-all duration-500;
+/* Atmospheric glowing blobs behind content (light mode) */
+html::before,
+html::after,
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 1;
 }
 
-/* html.dark .glass-card {
-  background: var(--color-glass-dark);
-  border-color: rgba(30, 41, 59, 0.5);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-} */
+/* Blob 1: top-left (slightly off-canvas) */
+html::before {
+  width: 50vw;
+  height: 50vh;
+  top: -10%;
+  left: -20%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.4) 0%,
+    transparent 70%
+  );
+  animation: float-blob-1 65s linear infinite;
+}
+
+/* Blob 2: bottom-right */
+html::after {
+  width: 60vw;
+  height: 60vh;
+  bottom: -15%;
+  right: -10%;
+  background: radial-gradient(
+    circle,
+    rgba(79, 70, 229, 0.3) 0%,
+    transparent 70%
+  );
+  animation: float-blob-2 45s linear infinite;
+  animation-delay: -5s;
+}
+
+/* Blob 3: mid-left area */
+body::before {
+  width: 55vw;
+  height: 55vh;
+  top: 40%;
+  left: 30%;
+  background: radial-gradient(
+    circle,
+    rgba(129, 140, 248, 0.25) 0%,
+    transparent 70%
+  );
+  animation: float-blob-3 55s linear infinite;
+  animation-delay: -10s;
+}
+
+@keyframes float-blob-1 {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(6%) translateX(3%) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+@keyframes float-blob-2 {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5%) translateX(-4%) scale(1.01);
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+@keyframes float-blob-3 {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4%) translateX(5%) scale(1.015);
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+/* DARK MODE SETTINGS */
+html.dark {
+  background: linear-gradient(to bottom right, #020617, #0f172a);
+  background-attachment: fixed;
+  color: #f8fafc;
+}

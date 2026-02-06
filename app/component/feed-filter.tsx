@@ -18,10 +18,10 @@ export function FeedFilter() {
         </h2> */}
 
         {/* Grey Container */}
-        <div className="relative flex p-1.5 bg-slate-100/50 backdrop-blur-2xl rounded-full border border-white/40 shadow-sm">
+        <div className="relative flex p-1.5 bg-slate-100/50 dark:bg-slate-900/40 backdrop-blur-2xl rounded-full border border-white/40 dark:border-white/5 shadow-sm">
           {/* Sliding Pill*/}
           <div
-            className={`absolute top-1.5 bottom-1.5 left-1.5 w-[calc(33.3333%-4px)] bg-white rounded-full shadow-sm transition-transform duration-300 ease-in-out ${
+            className={`absolute top-1.5 bottom-1.5 left-1.5 w-[calc(33.3333%-4px)] bg-white dark:bg-slate-800 dark:border dark:border-white/10 rounded-full shadow-sm transition-transform duration-300 ease-in-out ${
               filter === "Local"
                 ? "translate-x-full"
                 : filter === "Trending"

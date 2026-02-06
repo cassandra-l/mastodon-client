@@ -12,7 +12,7 @@ import { SidebarButton } from "./sidebar-button";
 
 export function LeftSidebar() {
   return (
-    <aside className="sticky top-0 h-screen pl-8 pt-20 pr-8 bg-white border border-white/40">
+    <aside className="sticky top-0 h-screen pl-8 pt-20 pr-8 bg-white border dark:bg-slate-900/70 border-white/40 dark:border-white/5">
       <h2 className="mb-6 font-bold italic text-2xl">Mastodon Client</h2>
 
       <nav className="flex flex-col gap-4">

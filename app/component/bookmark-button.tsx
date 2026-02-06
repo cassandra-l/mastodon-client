@@ -20,9 +20,13 @@ export function BookmarkButton() {
       className="group inline-flex items-center gap-2 text-base cursor-pointer"
     >
       <span
-        className={
-          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 hover:scale-110 transition-transform duration-150 active:scale-90 group-hover:bg-indigo-100"
-        }
+        className={`
+          rounded-2xl p-2.5 shadow-sm shadow-gray-200 dark:shadow-none hover:scale-110 transition-transform duration-150 active:scale-90 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/30
+        ${
+          bookmarked
+            ? "bg-indigo-100 dark:bg-indigo-900/30"
+            : "bg-white/70 dark:bg-slate-800/50"
+        }`}
       >
         {bookmarked ? (
           <FontAwesomeIcon

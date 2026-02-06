@@ -25,14 +25,17 @@ export function CommentButton(props: Props) {
       className="group inline-flex items-center gap-2 cursor-pointer"
     >
       <span
-        className={[
-          "rounded-2xl p-2.5 bg-[#FFFFFF]/70 shadow-sm shadow-gray-200 text-base leading-none transition-transform duration-150 ease-out  group-hover:bg-indigo-100",
-          !comment && "group-hover:scale-110",
-        ].join(" ")}
+        className={`
+          rounded-2xl p-2.5 shadow-sm shadow-gray-200 dark:shadow-none hover:scale-110 transition-transform duration-150 active:scale-90 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/30
+        ${
+          comment
+            ? "bg-indigo-100 dark:bg-indigo-900/30"
+            : "bg-white/70 dark:bg-slate-800/50"
+        }`}
       >
         {comment ? (
           <FontAwesomeIcon
-            className="text-[#94A3B8] group-hover:text-indigo-600"
+            className="text-indigo-600 group-hover:text-indigo-600"
             icon={solidCommentIcon}
           />
         ) : (
