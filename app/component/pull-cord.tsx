@@ -20,13 +20,15 @@ export function PullCord() {
       <motion.div
         className="w-0.5 bg-[#f59e0b] dark:bg-slate-700 origin-top"
         style={{ height: 128 }}
+        animate={{ height: isPulled ? 138 : 128 }} // 128 + 15px pull
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
       ></motion.div>
 
       {/* The Lamp Handle */}
       <motion.div
-        animate={{
-          y: isPulled ? 0 : -5,
-        }}
+        // animate={{
+        //   y: isPulled ? 0 : -5,
+        // }}
         className="
         group w-10 h-16 rounded-xl flex flex-col items-center justify-center gap-2
         
