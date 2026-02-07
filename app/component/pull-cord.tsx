@@ -27,26 +27,28 @@ export function PullCord() {
         animate={{
           y: isPulled ? 0 : -5,
         }}
-        className="group w-10 h-16 rounded-xl flex flex-col items-center justify-end pb-5 focus:ring focus:ring-amber-50
+        className="
+        group w-10 h-16 rounded-xl flex flex-col items-center justify-end pb-5
+        
         /* Background */
-       bg-white dark:bg-slate-900 dark:border-2 dark:border-slate-700
+       bg-white dark:bg-slate-900
     
         /* Border */
-        before:content-[''] before:absolute before:inset-[0.3px]
-        before:rounded-[11.7px] before:border-2
-      before:border-amber-200 before:opacity-100
-      dark:before:border-none
+        border-2 border-amber-200 opacity-100
+        dark:border-none dark:border-2 dark:border-slate-700
 
-      ring-1 ring-slate-800
+        /* Ring */
+        ring-1 ring-slate-800
     
         /* Shadow  */
         shadow-[0_10px_20px_rgba(245,158,11,0.2)]
         dark:shadow-[0_10px_25px_rgba(99,102,241,0.3)]
+
+        hover:shadow-[0_0px_48px_10px_rgba(245,158,11,0.28)]
+        hover:dark:shadow-[0_0px_60px_16px_rgba(99,102,241,0.33)]
+        transition-shadow duration-300 ease-in-out
         "
       >
-        {/* Glow */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700 blur-xl rounded-full bg-amber-400 dark:bg-indigo-500" />
-
         {/* Icon Container */}
         <motion.div
           key={theme}
