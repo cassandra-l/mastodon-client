@@ -35,7 +35,7 @@ export function PullCord() {
         //   y: isPulled ? 0 : -5,
         // }}
         className="
-        group w-10 h-16 rounded-xl flex flex-col items-center justify-center gap-2
+        group w-10 h-16 rounded-xl flex flex-col items-center justify-center gap-1.5
         
         /* Background */
        bg-white dark:bg-slate-900
