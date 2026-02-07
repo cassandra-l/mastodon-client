@@ -20,10 +20,6 @@ export function PullCord() {
       <motion.div
         className="w-0.5 bg-[#f59e0b] dark:bg-slate-700 origin-top"
         style={{ height: 128 }}
-        animate={{
-          scaleY: isPulled ? 1.4 : 1.0, // Significant stretch
-        }}
-        transition={{ type: "spring", stiffness: 400, damping: 25 }}
       ></motion.div>
 
       {/* The Lamp Handle */}
