@@ -28,34 +28,35 @@ export function PullCord() {
           y: isPulled ? 0 : -5,
         }}
         className="
-        group w-10 h-16 rounded-xl flex flex-col items-center justify-end pb-5
+        group w-10 h-16 rounded-xl flex flex-col items-center justify-center gap-2
         
         /* Background */
        bg-white dark:bg-slate-900
     
         /* Border */
-        border-2 border-amber-200 opacity-100
-        dark:border-none dark:border-2 dark:border-slate-700
+        border-2 border-amber-200 dark:border-slate-700
 
         /* Ring */
-        ring-1 ring-slate-800
+        ring-1 ring-amber-50 dark:ring-slate-800
     
-        /* Shadow  */
-        shadow-[0_10px_20px_rgba(245,158,11,0.2)]
-        dark:shadow-[0_10px_25px_rgba(99,102,241,0.3)]
+        /* Shadow */
+        shadow-[0_10px_20px_-5px] shadow-amber-500/20
+        dark:shadow-[0_10px_25px_-5px] dark:shadow-indigo-500/30
 
-        hover:shadow-[0_0px_48px_10px_rgba(245,158,11,0.28)]
-        hover:dark:shadow-[0_0px_60px_16px_rgba(99,102,241,0.33)]
-        transition-shadow duration-300 ease-in-out
+        /* Hover */
+        hover:scale-105 transition-all duration-500 ease-in-out
+        hover:shadow-[0_25px_50px_-12px] hover:shadow-amber-500/40
+         dark:hover:shadow-[0_25px_50px_-12px] dark:hover:shadow-indigo-500/60
         "
       >
+        <div className="absolute inset-0 rounded-full blur-xl hover:bg-amber-400 dark:hover:bg-indigo-500 opacity-0 group-hover:opacity-40 transition-opacity duration-700 ease-in-out"></div>
         {/* Icon Container */}
         <motion.div
           key={theme}
           initial={{ rotate: -90, opacity: 0 }}
           animate={{ rotate: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative z-10 text-amber-500 dark:text-indigo-400"
+          className="relative z-10 text-amber-500 dark:text-indigo-400 pointer-events-none"
         >
           {theme === "light" ? (
             <svg
@@ -89,47 +90,8 @@ export function PullCord() {
             </svg>
           )}
         </motion.div>
+        <div className="w-1.5 h-3.5 rounded-full bg-amber-50 shadow-inner shadow-amber-700/25 border border-amber-200/50 dark:bg-indigo-500 dark:shadow-indigo-500/60 dark:border-indigo-400"></div>
       </motion.div>
     </motion.div>
   );
 }
-
-// relative -mt-3 w-10 h-16 bg-white dark:bg-slate-900 shadow-[0_15px_30px_-5px_rgba(245,158,11,0.2)] dark:hadow-[0_15px_30px_-5px_rgba(99,102,241,0.3)] rounded-b-2xl flex flex-col items-center justify-end pb-4 border-2 border-amber-900 group hover:bg-amber-700 transition-colors"
-
-// relative -mt-1 w-12 h-24 rounded-2xl flex flex-col items-center justify-end pb-5
-//           transition-all duration-500 border-[1.5px] pointer-events-none
-
-//           /* Light Mode */
-//           bg-white border-amber-200 shadow-[0_15px_30px_-5px_rgba(245,158,11,0.2)]
-
-//           /* Dark Mode */
-//           dark:bg-slate-900 dark:border-slate-700 dark:ring-1 dark:ring-slate-800
-//           dark:shadow-[0_15px_30px_-5px_rgba(99,102,241,0.3)]
-
-//         {/* The Icon inside the lamp */}
-//         <motion.div
-//           key={theme}
-//           initial={{ rotate: -90, opacity: 0 }}
-//           animate={{ rotate: 0, opacity: 1 }}
-//           transition={{ duration: 0.3 }}
-//           className="text-amber-200"
-//         >
-//           <FontAwesomeIcon
-//             icon={theme === "light" ? faSun : faMoon}
-//             size="lg"
-//           />
-//         </motion.div>
-
-//         {/* Glow effect when Dark Mode is on */}
-//         {theme === "dark" && (
-//           <motion.div
-//             initial={{ opacity: 0 }}
-//             animate={{ opacity: 1 }}
-//             transition={{ duration: 0.3 }}
-//             className="absolute inset-0 bg-amber-400/20 blur-xl rounded-full"
-//           />
-//         )}
-//       </motion.button>
-//     </motion.div.>
-//   );
-// }
