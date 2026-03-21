@@ -11,8 +11,8 @@ interface Props {
 export function FeedFilterButton(props: Props) {
   return (
     <button
-      onClick={() => props.clickHandler()}
-      className="relative flex-1 flex items-center justify-center gap-2 py-3 transition-all duration-500 ease-in-out cursor-pointer group hover:scale-105"
+      onMouseDown={() => props.clickHandler()}
+      className="relative flex-1 flex items-center justify-center gap-2 py-3 transition-all duration-500 ease-in-out cursor-pointer group hover:scale-105 active:scale-90"
     >
       <FontAwesomeIcon
         icon={props.icon}

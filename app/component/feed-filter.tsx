@@ -51,26 +51,6 @@ export function FeedFilter() {
           />
         </div>
       </div>
-      {/* <div>
-        <h2 className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-4">
-          Current Server
-        </h2>
-
-        <div className=" bg-white/30 p-5 rounded-2xl border border-white/40 shadow-sm mb-2"></div>
-
-        <button className=" bg-linear-to-r from-[#6366f1] to-[#a855f7] p-3 rounded-2xl border border-white/40 shadow-sm shadow-indigo-500/20 text-[10px] font-bold tracking-[0.2em] text-white uppercase text-center w-full ">
-          Swap server
-        </button>
-        <div className="flex items-center">
-          <span className="relative bg-emerald-500 rounded-full h-2 w-2 m-3">
-            <span className="absolute animate-ping rounded-full h-2 w-2 bg-emerald-400"></span>
-          </span>
-          <p className="text-[11px] font-medium text-slate-600">
-            Connected to
-            <span className="font-bold text-indigo-600"> mastodon.social</span>
-          </p>
-        </div>
-      </div> */}
     </div>
   );
 }

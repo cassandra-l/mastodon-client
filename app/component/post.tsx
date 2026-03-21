@@ -21,7 +21,7 @@ interface Props {
 
 export function Post(props: Props): JSX.Element {
   return (
-    <div className="bg-white/70 border border-white/50 dark:bg-slate-900/70 dark:border-white/5 backdrop-blur-3xl mb-10 rounded-[40px] p-8 hover:-translate-y-2 transition-all duration-500 ease-in-out hover:shadow-2xl hover:shadow-[#6366F1]/30 dark:hover:shadow-[#6366F1]/10 cursor-pointer">
+    <div className="bg-white/70 border border-white/50 dark:bg-slate-900/70 dark:border-white/5 backdrop-blur-xl mb-10 rounded-[40px] p-8 hover:-translate-y-2 transition-all duration-500 ease-in-out hover:shadow-2xl hover:shadow-[#6366F1]/30 dark:hover:shadow-[#6366F1]/10 cursor-pointer">
       <div className="py-2 flex justify-between items-center">
         <div className="flex justify-between items-center">
           <img className="rounded-full w-15 mr-2" src={props.avatar} />

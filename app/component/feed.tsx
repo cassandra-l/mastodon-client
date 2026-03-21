@@ -23,7 +23,7 @@ export function Feed() {
 
   return (
     <div className="w-xl mx-auto mt-20">
-      <h1 className="mt-5 text-6xl font-black text-slate-900 dark:text-white tracking-tighter">
+      <h1 className="mt-5 text-6xl font-black text-slate-900 dark:text-slate-200 tracking-tighter">
         Your Feed
       </h1>
       <div className="mb-20">

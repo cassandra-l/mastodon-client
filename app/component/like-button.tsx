@@ -34,7 +34,7 @@ export function LikeButton(props: Props) {
     >
       <span
         className={`
-          rounded-2xl p-2.5 shadow-sm shadow-gray-200 dark:shadow-none hover:scale-110 transition-transform duration-150 active:scale-90 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/30
+          rounded-2xl p-2.5 shadow-sm shadow-gray-200 dark:shadow-none group-hover:scale-110 transition-transform duration-150 active:scale-90 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/30
         ${
           liked
             ? "bg-indigo-100 dark:bg-indigo-900/30"

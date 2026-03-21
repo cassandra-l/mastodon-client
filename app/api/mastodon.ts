@@ -145,6 +145,17 @@ export interface Mention {
 export interface Tag {
   name: string;
   url: string;
+  id?: string; // The internal ID of the tag. Only included in the get trending tags repsonse
+  history?: TagHistory; // Usage statistics for the last 7 days. Only included in the get trending tags repsonse
+}
+
+export interface TagHistory {
+  /** UNIX timestamp for the beginning of the day (as a string) */
+  day: string;
+  /** The number of unique accounts using the tag that day (as a string) */
+  accounts: string;
+  /** The total number of posts using the tag that day (as a string) */
+  uses: string;
 }
 
 export interface Card {
@@ -202,11 +213,31 @@ export interface Role {
 
 export async function getStatuses(): Promise<Status[]> {
   const response = await fetch(
-    "https://mastodon.social/api/v1/trends/statuses"
+    "https://mastodon.social/api/v1/trends/statuses",
   );
   if (!response.ok) {
     throw new Error(`Response status: ${response.status}`);
   }
   const result = (await response.json()) as Status[];
+  return result;
+}
+
+export async function getStatusesByTag(tag: string): Promise<Status[]> {
+  const response = await fetch(
+    `https://mastodon.social/api/v1/timelines/tag/${tag}?local=false`,
+  );
+  if (!response.ok) {
+    throw new Error(`Response status: ${response.status}`);
+  }
+  const result = (await response.json()) as Status[];
+  return result;
+}
+
+export async function getTrendingTags(): Promise<Tag[]> {
+  const response = await fetch(`https://mastodon.social/api/v1/trends/tags`);
+  if (!response.ok) {
+    throw new Error(`Response status: ${response.status}`);
+  }
+  const result = (await response.json()) as Tag[];
   return result;
 }
