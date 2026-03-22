@@ -1,12 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "digital-bouquet",
+  "name": "mastodon-client",
   "compatibility_date": "2025-03-01",
   "pages_build_output_dir": "./build/client",
   "compatibility_flags": [
     "nodejs_compat"
-  ],
-  "observability": {
-    "enabled": true
-  }
+  ]
 }
