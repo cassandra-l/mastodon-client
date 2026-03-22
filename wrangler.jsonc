@@ -1,10 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "mastodon-client",
-  "compatibility_date": "2025-03-01",
-  "assets": {
-    "directory": "./build/client",
-    "not_found_handling": "single-page-application",
+  "compatibility_date": "2026-03-12",
+  "observability": {
+    "enabled": true,
   },
+  "main": "./workers/app.ts",
   "compatibility_flags": ["nodejs_compat"],
 }
