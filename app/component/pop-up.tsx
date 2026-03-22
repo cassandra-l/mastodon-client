@@ -32,7 +32,7 @@ export function PopUp({ onClose }: PopUpProps) {
           <div className="relative">
             <input
               type="text"
-              placeholder="username@instance"
+              placeholder="Enter mastodon server address"
               className="w-full p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder:text-slate-400"
             />
           </div>
@@ -43,13 +43,18 @@ export function PopUp({ onClose }: PopUpProps) {
         </div>
 
         {/* Create Account */}
-        <div className="mt-8 text-sm">
-          <span className="text-slate-500 dark:text-slate-400 pr-1">
+        <div className="mt-8 flex flex-col">
+          <span className="text-slate-500 text-sm dark:text-slate-400 pr-1">
             Don't have an account?
           </span>
-          <button className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline cursor-pointer">
-            Create one!
-          </button>
+          <a
+            href="https://joinmastodon.org/servers"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[12px] text-indigo-600 dark:text-indigo-400 font-bold hover:underline cursor-pointer"
+          >
+            Pick a server and register one.
+          </a>
         </div>
 
         {/* Close button */}
