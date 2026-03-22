@@ -49,11 +49,9 @@ export default function App() {
     <div className="flex min-h-screen">
       <PullCord />
       <LeftSidebar />
-
       <main className="flex-1">
         <Outlet />
       </main>
-      <RightSidebar />
     </div>
   );
 }

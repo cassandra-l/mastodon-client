@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getStatuses, type Status } from "~/api/mastodon";
 import { Post } from "~/component/post";
 import { FeedFilter } from "~/component/feed-filter";
+import { RightSidebar } from "./right-sidebar";
 
 export function Feed() {
   const [mastodonStatuses, setMastodonStatuses] = useState<Status[]>([]);
@@ -22,32 +23,38 @@ export function Feed() {
   // because nothing else is a dependency, so nothing else will trigger it.
 
   return (
-    <div className="w-xl mx-auto mt-20">
-      <h1 className="mt-5 text-6xl font-black text-slate-900 dark:text-slate-200 tracking-tighter">
-        Your Feed
-      </h1>
-      <div className="mb-20">
-        <FeedFilter />
+    <div className="mt-20 flex justify-center gap-20">
+      <div className="w-10 shrink-0 hidden xl:block" aria-hidden="true"></div>
+      <div className="w-xl">
+        <h1 className="mt-2 text-6xl font-black text-slate-900 dark:text-slate-200 tracking-tighter">
+          Your Feed
+        </h1>
+        <div className="mb-20">
+          <FeedFilter />
+        </div>
+        {mastodonStatuses.map((postData, index) => {
+          // The API response (when data is fetch in JSON) turns dates into strings.
+          // JavaScript does not automatically turn API dates into Date objects.
+          const dateObject = new Date(postData.created_at);
+          return (
+            <Post
+              key={index}
+              authorUsername={postData.account.display_name}
+              content={postData.content}
+              createdAt={dateObject}
+              media_attachments={postData.media_attachments}
+              avatar={postData.account.avatar}
+              username={postData.account.username}
+              favourites_count={postData.favourites_count}
+              replies_count={postData.replies_count}
+              reblogs_count={postData.reblogs_count}
+            />
+          );
+        })}
       </div>
-      {mastodonStatuses.map((postData, index) => {
-        // The API response (when data is fetch in JSON) turns dates into strings.
-        // JavaScript does not automatically turn API dates into Date objects.
-        const dateObject = new Date(postData.created_at);
-        return (
-          <Post
-            key={index}
-            authorUsername={postData.account.display_name}
-            content={postData.content}
-            createdAt={dateObject}
-            media_attachments={postData.media_attachments}
-            avatar={postData.account.avatar}
-            username={postData.account.username}
-            favourites_count={postData.favourites_count}
-            replies_count={postData.replies_count}
-            reblogs_count={postData.reblogs_count}
-          />
-        );
-      })}
+      <div>
+        <RightSidebar />
+      </div>
     </div>
   );
 }
