@@ -4,7 +4,7 @@ A web client for the federated social network, Mastodon, to experiment with buil
 
 Built with React Router as a full-stack framework to provide features like server-side rendering (for the sake of SEO and other benefits) and Tailwind for styling.
 
-Feel free to play around with it and hope you have fun! ✨
+👉 Feel free to play around with it and hope you have fun! ✨
 
 ## Developing
 
