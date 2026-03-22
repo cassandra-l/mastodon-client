@@ -6,6 +6,7 @@ import { faComment as regularCommentIcon } from "@fortawesome/free-regular-svg-i
 
 interface Props {
   replies_count: number;
+  onClick: (e: React.MouseEvent) => void;
 }
 
 export function CommentButton(props: Props) {
@@ -21,7 +22,7 @@ export function CommentButton(props: Props) {
     <button
       type="button"
       title="Comment"
-      onClick={toggleComment}
+      onClick={props.onClick}
       className="group inline-flex items-center gap-2 cursor-pointer"
     >
       <span

@@ -23,7 +23,7 @@ export function RightSidebar() {
             Create an Account
           </button>
           <button className="w-full flex items-center justify-center uppercase font-black tracking-[0.2em] bg-linear-to-br from-indigo-500 to-violet-500 dark:bg-linear-to-br dark:from-indigo-500/70 dark:to-violet-500/70 py-4 px-6 rounded-xl text-white shadow-lg shadow-indigo-500/20 cursor-pointer hover:scale-105 active:scale-90 transition-transform duration-300">
-            Log In to instance
+            Sign In to instance
           </button>
         </div>
       </div>

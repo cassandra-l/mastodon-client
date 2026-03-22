@@ -6,6 +6,8 @@ import { CommentButton } from "~/component/comment-button";
 import { ReblogButton } from "~/component/reblog-button";
 import { BookmarkButton } from "~/component/bookmark-button";
 import { LikeButton } from "~/component/like-button";
+import { PopUp } from "~/component/pop-up";
+import { useState } from "react";
 
 interface Props {
   authorUsername: string;
@@ -20,6 +22,14 @@ interface Props {
 }
 
 export function Post(props: Props): JSX.Element {
+  const [showLoginCard, setShowLoginCard] = useState(false);
+
+  // A single function to trigger the login prompt
+  const triggerLoginPrompt = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setShowLoginCard(true);
+  };
+
   return (
     <div className="bg-white/70 border border-white/50 dark:bg-slate-900/70 dark:border-white/5 backdrop-blur-xl mb-10 rounded-[40px] p-8 hover:-translate-y-2 transition-all duration-500 ease-in-out hover:shadow-2xl hover:shadow-[#6366F1]/30 dark:hover:shadow-[#6366F1]/10 cursor-pointer">
       <div className="py-2 flex justify-between items-center">
@@ -36,6 +46,7 @@ export function Post(props: Props): JSX.Element {
           {timeAgo(props.createdAt)}
         </div>
       </div>
+      {showLoginCard && <PopUp onClose={() => setShowLoginCard(false)} />}
       <div
         className="wrap-break-word [&_p]:mb-3 [&_a]:text-[#6366F1] dark:[&_a]:text-[#6366F1]/60 [&_a:hover]:underline dark:text-slate-300"
         dangerouslySetInnerHTML={{ __html: props.content }}
@@ -44,9 +55,15 @@ export function Post(props: Props): JSX.Element {
       <div className="mt-7 border-t-[0.5px] border-gray-300 dark:border-white/8"></div>
       <div className="mt-6 flex justify-between gap-4">
         <LikeButton favourites_count={props.favourites_count} />
-        <CommentButton replies_count={props.replies_count} />
-        <ReblogButton reblogs_count={props.reblogs_count} />
-        <BookmarkButton />
+        <CommentButton
+          replies_count={props.replies_count}
+          onClick={triggerLoginPrompt}
+        />
+        <ReblogButton
+          reblogs_count={props.reblogs_count}
+          onClick={triggerLoginPrompt}
+        />
+        <BookmarkButton onClick={triggerLoginPrompt} />
       </div>
     </div>
   );

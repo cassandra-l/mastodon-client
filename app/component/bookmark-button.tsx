@@ -4,7 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark as regularBookmarkIcon } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark as solidBookmarkIcon } from "@fortawesome/free-solid-svg-icons";
 
-export function BookmarkButton() {
+interface Props {
+  onClick: (e: React.MouseEvent) => void;
+}
+
+export function BookmarkButton(props: Props) {
   const [bookmarked, setBookmarked] = useState<boolean>(false);
 
   function toggleBookmarked() {
@@ -16,7 +20,7 @@ export function BookmarkButton() {
   return (
     <button
       title="Bookmark"
-      onClick={toggleBookmarked}
+      onClick={props.onClick}
       className="group inline-flex items-center gap-2 text-base cursor-pointer"
     >
       <span

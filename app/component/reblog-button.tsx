@@ -5,6 +5,7 @@ import { faRetweet } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   reblogs_count: number;
+  onClick: (e: React.MouseEvent) => void;
 }
 
 export function ReblogButton(props: Props) {
@@ -29,7 +30,7 @@ export function ReblogButton(props: Props) {
     <button
       type="button"
       title="Reblog"
-      onClick={toggleLike}
+      onClick={props.onClick}
       className="group inline-flex items-center gap-2 text-base cursor-pointer"
     >
       <span
