@@ -6,6 +6,10 @@ Built with React Router as a full-stack framework to provide features like serve
 
 👉 **Feel free to play around with it and hope you have fun!** ✨
 
+🔗 **Website Link: https://mastodon-client.cassandra-l.workers.dev/**
+<img width="1470" height="795" alt="image" src="https://github.com/user-attachments/assets/17773779-b2e7-4024-b8e0-3eb5780be864" />
+
+
 ## Developing
 
 Install the dependencies:
