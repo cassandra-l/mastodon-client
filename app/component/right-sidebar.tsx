@@ -10,7 +10,7 @@ export function RightSidebar() {
     });
   }, []);
   return (
-    <aside className="sticky top-20 h-screen pt-7 flex flex-col gap-6 w-68">
+    <aside className="sticky top-20 h-screen pt-7 flex flex-col gap-6 w-67">
       <div className="text-[10px] backdrop-blur-3xl bg-white/60 dark:bg-slate-900/70 border border-indigo-100 dark:border-indigo-500/20 rounded-3xl p-8">
         <div className="text-[11px] uppercase text-slate-400 dark:text-slate-500 tracking-[0.2em] font-black mb-6">
           Profile Identity
