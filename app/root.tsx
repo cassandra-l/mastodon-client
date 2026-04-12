@@ -13,7 +13,18 @@ import { LeftSidebar } from "./component/left-sidebar";
 import { PullCord } from "./component/pull-cord";
 import { RightSidebar } from "./component/right-sidebar";
 
+export const meta: Route.MetaFunction = () => {
+  return [
+    { title: "MasClient" },
+    {
+      name: "description",
+      content: "A web client for mastodon social network.",
+    },
+  ];
+};
+
 export const links: Route.LinksFunction = () => [
+  { rel: "icon", href: "/favicon.png", type: "image/png" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
