@@ -11,7 +11,6 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import { LeftSidebar } from "./component/left-sidebar";
 import { PullCord } from "./component/pull-cord";
-import { RightSidebar } from "./component/right-sidebar";
 
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/favicon.png", type: "image/png" },
